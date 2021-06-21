@@ -1,0 +1,421 @@
+html {
+  scroll-behavior: smooth;
+  background-color: #00d9ff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Italiana", serif;
+  color: black;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    "top-menu top-menu top-menu" 50px
+    ". hiring ." auto
+    ". aboutme ." 1fr
+    ". portfolio-title ." 1fr
+    ". project-one project-two project-three ." 1fr
+    ". experience . " 1fr /
+    repeat(minmax(50px, auto));
+  height: 100vh;
+  width: 100vh;
+  content: center;
+  align-content: center;
+  text-align: center;
+  border: 1px solid black;
+}
+.top-menu {
+  grid-area: top-menu;
+  display: grid;
+  grid-template:
+    "headername . aboutmelink portfoliolink experiencelink" 50px /
+    20ch 1fr 15ch 15ch 15ch;
+  background-color: #00d9ff;
+  text-align: center;
+  text-justify: center;
+}
+.headername {
+  grid-area: headername;
+  color: white;
+  place-items: center;
+  padding-top: 0px;
+}
+.aboutmelink {
+  grid-area: aboutmelink;
+}
+.portfoliolink {
+  grid-area: portfoliolink;
+}
+.experiencelink {
+  grid-area: experiencelink;
+}
+.aboutmelink,
+.portfoliolink,
+.experiencelink {
+  background-color: rgb(255, 255, 255);
+  font-size: 1.11rem;
+  border-radius: 5px;
+  place-items: center;
+  margin: 10px;
+  padding-top: 4px;
+}
+header a:visited,
+header a:active,
+header a:link {
+  color: #00d9ff;
+  text-decoration: none;
+}
+
+.hiring {
+  grid-area: hiring;
+  display: grid;
+  grid-template:
+    ". hiring-h1 ." 18rem
+    ". hiring-p  ." 150px /
+    1fr 50ch 1fr;
+  background-color: #00d9ff;
+}
+
+.hiring-h1 {
+  grid-area: hiring-h1;
+
+  padding-top: 40px;
+  text-align: left;
+  font-size: 3rem;
+  width: 10ch;
+  color: white;
+}
+.hiring-p {
+  grid-area: hiring-p;
+  display: grid;
+  text-align: center;
+  text-align: justify;
+  width: auto;
+  color: white;
+  display: inline-block;
+}
+.hiring-p span {
+  font-weight: bold;
+  display: inline-block;
+}
+.hiring-p span-two {
+  text-decoration: underline;
+  text-decoration-style: 2px;
+  color: white;
+}
+
+.aboutme {
+  grid-area: aboutme;
+  display: grid;
+  grid-template:
+    ". aboutme-h1 ." auto
+    ". introduction  ." auto
+    ". intro-text ." auto
+    ". tech-skills ." auto
+    ". skillset ." auto /
+    1fr minmax(0px, 750px) 1fr;
+  border: 5px solid #00d9ff;
+  background-color: white;
+}
+.aboutme h1 {
+  grid-area: aboutme-h1;
+  text-align: center;
+  padding-bottom: 2ch;
+  padding-top: 2ch;
+}
+.introduction {
+  grid-area: introduction;
+  font-weight: bold;
+  padding-bottom: 1ch;
+}
+.tech-skills {
+  grid-area: tech-skills;
+  font-weight: bold;
+  padding-bottom: 1ch;
+  padding-top: 3ch;
+}
+
+.intro-text {
+  grid-area: intro-text;
+  display: inline-block;
+  text-align: center;
+  text-align: justify;
+  width: auto;
+}
+.skillset {
+  grid-area: skillset;
+  display: grid;
+  grid-template:
+    ". skillset1 skillset2 ." auto
+    /
+    1fr 1fr 1fr 1fr;
+  padding-bottom: 5ch;
+}
+
+.skillset1 {
+  grid-area: skillset1;
+  margin-left: 5ch;
+  width: auto;
+}
+.skillset2 {
+  grid-area: skillset2;
+  margin-left: 10ch;
+}
+
+.portfolio {
+  background-color: #ffcece;
+  content: center;#00d9ff
+  align-content: center;
+  padding-bottom: 5ch;
+  border: 5px solid #00d9ff;
+}
+.portfolio h1 {
+  grid-area: portfolio-title;
+  text-align: center;
+  padding-bottom: 2ch;
+  padding-top: 2ch;
+  
+}
+
+.project-one {
+  grid-area: project-one;
+  display: grid;
+  grid-template:
+    "project-one-header" auto
+    "project-one-p" auto
+    "project-one-cv" auto
+    "project-one-github" auto /
+    auto;
+  background-color: white;
+  border: 4px solid;
+  border-radius: 5px;
+  border-color: #b9275f;
+  box-shadow: 4px 8px 12px #888888;
+  width: 35ch;
+  content: center;
+  text-align: center;
+  display: inline-block;
+  margin-left: 5ch;
+  margin-right: 5ch;
+  padding-bottom: 4ch;
+}
+
+.project-one h2 {
+  grid-area: project-one-header;
+  text-align: left;
+  size: 5ch;
+  padding-top: 2ch;
+  padding-left: 2.75ch;
+}
+.project-one p {
+  grid-area: project-one-p;
+  text-align: center;
+  text-align: justify;
+  content: center;
+  width: 26ch;
+  margin-left: 4ch;
+  padding-bottom: 3ch;
+  padding-top: 1ch;
+}
+.project-one .cv {
+  grid-area: project-one-cv;
+  color: white;
+  background-color: #b9275f;
+  display: block;
+  text-align: center;
+  content: center;
+  padding-left: 5px;
+  border-radius: 5px;
+  width: 26ch;
+  margin-left: 4ch;
+}
+.project-one .github {
+  grid-area: project-one-github;
+  color: #b9275f;
+  text-align: center;
+  width: 34ch;
+  padding-top: 1ch;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-bottom: 6ch;
+}
+
+.project-two {
+  grid-area: project-two;
+  display: grid;
+  grid-template:
+    "project-two-header" auto
+    "project-two-p" auto
+    "project-two-cv" auto
+    "project-two-github" auto/
+    auto;
+  background-color: white;
+  border: 4px solid;
+  border-radius: 5px;
+  border-color: #b9275f;
+  box-shadow: 4px 8px 12px #888888;
+  width: 35ch;
+  content: center;
+  text-align: center;
+  display: inline-block;
+  margin-left: 5ch;
+  margin-right: 5ch;
+  padding-bottom: 4ch;
+}
+
+.project-two h2 {
+  grid-area: project-two-header;
+  text-align: left;
+  size: 5ch;
+  padding-top: 2ch;
+  padding-left: 2.75ch;
+}
+.project-two p {
+  grid-area: project-two-p;
+  text-align: center;
+  text-align: justify;
+  content: center;
+  width: 26ch;
+  margin-left: 4ch;
+  padding-bottom: 3ch;
+  padding-top: 1ch;
+}
+.project-two .cv {
+  grid-area: project-two-cv;
+  color: white;
+  background-color: #b9275f;
+  display: block;
+  text-align: center;
+  content: center;
+  padding-left: 5px;
+  border-radius: 5px;
+  width: 26ch;
+  margin-left: 4ch;
+}
+.project-two .github {
+  grid-area: project-two-github;
+  color: #b9275f;
+  text-align: center;
+  width: 34ch;
+  padding-top: 1ch;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding-bottom: 3ch;
+}
+
+.project-three {
+  grid-area: project-three;
+  display: grid;
+  grid-template:
+    "project-three-header" auto
+    "project-three-p" auto
+    "project-three-cv" auto
+    "project-three-github" auto/
+    auto;
+  background-color: white;
+  border: 4px solid;
+  border-radius: 5px;
+  border-color: #b9275f;
+  box-shadow: 4px 8px 12px #888888;
+  width: 35ch;
+  content: center;
+  text-align: center;
+  display: inline-block;
+  margin-left: 5ch;
+  margin-right: 5ch;
+  padding-bottom: 4ch;
+}
+
+.project-three h2 {
+  grid-area: project-three-header;
+  text-align: left;
+  size: 5ch;
+  padding-top: 2ch;
+  padding-left: 2.75ch;
+}
+.project-three p {
+  grid-area: project-three-p;
+  text-align: center;
+  text-align: justify;
+  content: center;
+  width: 26ch;
+  margin-left: 4ch;
+  padding-bottom: 3ch;
+  padding-top: 1ch;
+}
+.project-three .cv {
+  grid-area: project-three-cv;
+  color: white;
+  background-color: #b9275f;
+  display: block;
+  text-align: center;
+  content: center;
+  padding-left: 5px;
+  border-radius: 5px;
+  width: 26ch;
+  margin-left: 4ch;
+}
+.project-three .github {
+  grid-area: project-three-github;
+  color: #b9275f;
+  text-align: center;
+  width: 34ch;
+  padding-top: 1ch;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding-bottom: 3ch;
+}
+
+.experience {
+  grid-area: experience;
+  display: grid;
+  grid-template:
+    ". experience-h1 ." auto
+    ". job-title1 ." auto
+    ". job-description1 ." auto
+    ". job-title2 ." auto
+    ". job-description2 ." auto/
+    1fr minmax(0px, 750px) 1fr;
+  border: 5px solid #00d9ff;
+  background-color: white;
+}
+.experience h1 {
+  grid-area: experience-h1;
+  text-align: center;
+  padding-bottom: 2ch;
+  padding-top: 2ch;
+}
+.job-title1 {
+  grid-area: job-title1;
+}
+.job-title2 {
+  grid-area: job-title2;
+}
+
+.job-title1,
+.job-title2 {
+  font-weight: bold;
+  padding-bottom: 1ch;
+}
+
+.job-description1 {
+  grid-area: job-description1;
+}
+.job-description2 {
+  grid-area: job-description2;
+}
+.job-description1,
+.job-description2 {
+  display: inline-block;
+  text-align: center;
+  text-align: justify;
+  width: auto;
+  padding-bottom: 2ch;
+}
+footer {
+  background-color: #00d9ff;
+  color: white;
+}
